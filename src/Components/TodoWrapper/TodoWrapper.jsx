@@ -13,7 +13,7 @@ export default function Todo() {
     }
 
     function getCompleted() {
-        setTodosArray(todosArray.filter(todoArr => todoArr.completed))
+        setTodosArray(todosArray.filter(todoArr => todoArr.completed === true))
     }
 
     function getUnCompleted() {
@@ -31,6 +31,8 @@ export default function Todo() {
             }
             ]
         ))
+        
+
     }
 
     function handleSubmit(e) {
@@ -41,13 +43,13 @@ export default function Todo() {
     return (
         <div className="wrapper">
             <div className="sec-wrapper">
-                <div>
+                <div className="h1-div">
                     <h1>Todo List</h1>
                 </div>
                 <div className="top-div">
                     <form onSubmit={addToArray}>
                         <input onChange={handleSubmit}></input>
-                        <button>Add</button>
+                        <button className="add-btn">Add</button>
                     </form>
                     <select>
                         <option onClick={getAll}>All</option>

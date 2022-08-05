@@ -2,7 +2,6 @@ import StateContext from "../helpers/useContext"
 import { useContext } from "react"
 
 export default function SingleTodo(props) {
-    let { setDeleted } = useContext(StateContext)
     let { todosArray, setTodosArray } = useContext(StateContext)
 
     const completeTodo = () => {
@@ -30,7 +29,7 @@ export default function SingleTodo(props) {
                         : "pending"
                 }
             >
-                <h2>
+                <h2 className="todo-text">
                     {props.todoContent}
                 </h2>
             </div>
