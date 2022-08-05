@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgb(249, 186, 127), rgb(245, 163, 91));
+}
+
+.sec-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 30vh;
+    background-color: bisque;
+}
+
+.wrapper > * {
+    margin-top: 25vh;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    height: 2.3rem;
+    background-color: #fff;
+}
+
+form>input {
+    height: 100%;
+    width: 75%;
+    border: #fff;
+}
+
+form>button {
+    height: 2rem;
+    width: 19%;
+    margin-left: 1.3rem;
+    cursor: pointer;
+}
+
+.top-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30vw;
+    /* background-color: red; */
+    height: 20%;
+}
+
+select {
+    height: 85%;
+    width: 20%;
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 30%;
+    /* background-color: green; */
+}
+
+.todo {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-around;
+    width: 30vw;
+    height: 5vh;
+    margin-top: 10px;
+}
+
+.done-btn {
+    height: 100%;
+    width: 20%;
+    background-color: rgb(77, 200, 122);
+    border: 1px solid rgb(77, 200, 122);
+    color: white;
+    cursor: pointer;
+}
+
+.delete-btn {
+    height: 100%;
+    width: 20%;
+    background-color: rgb(243, 86, 99);
+    border: 1px solid rgb(243, 86, 99);
+    color: white;
+    cursor: pointer;
+}
+
+.pending {
+    background-color: #fff;
+    width: 55%;
+}
+
+.todo h2 {
+    margin-left: 1rem;
+}
+
+.completion {
+    background-color: #fff;
+    text-decoration: line-through;
+    text-decoration-color: #000;
+    text-decoration-thickness: 1.5px;
+    width: 55%;
+}
