@@ -4,19 +4,32 @@ import SingleTodo from "../SingleTodo"
 import StateContext from "../../helpers/useContext"
 
 export default function Todo() {
+
     let [formContent, setFormContent] = useState('')
     let { todosArray, setTodosArray } = useContext(StateContext)
 
+    function getAll() {
+        setTodosArray(todosArray)
+    }
+
+    function getCompleted() {
+        setTodosArray(todosArray.filter(todoArr => todoArr.completed))
+    }
+
+    function getUnCompleted() {
+        setTodosArray(todosArray.filter(todoArr => todoArr.completed === false))
+    }
+
     function addToArray(e) {
         e.preventDefault()
-        setTodosArray(prevTodos => ([
-            ...prevTodos,
+        setTodosArray(prevTodos => (
+            [...prevTodos,
             {
                 id: prevTodos.length + 1,
                 name: formContent,
                 completed: false
             }
-        ]
+            ]
         ))
     }
 
@@ -33,19 +46,25 @@ export default function Todo() {
                 </div>
                 <div className="top-div">
                     <form onSubmit={addToArray}>
-                        <input
-                            onChange={handleSubmit}
-                        ></input>
+                        <input onChange={handleSubmit}></input>
                         <button>Add</button>
                     </form>
                     <select>
-                        <option>All</option>
-                        <option>Done</option>
-                        <option>Pending</option>
+                        <option onClick={getAll}>All</option>
+                        <option onClick={getCompleted}>Done</option>
+                        <option onClick={getUnCompleted}>Pending</option>
                     </select>
                 </div>
                 <div className="todos">
-                    {todosArray.map(todo => <SingleTodo id={todo.id} key={todo.id} todoContent={todo.name} completion={todo.completed}/>)}
+                    {
+                        todosArray
+                            .map(todo =>
+                                <SingleTodo
+                                    id={todo.id}
+                                    key={todo.id}
+                                    todoContent={todo.name}
+                                    completion={todo.completed} />)
+                    }
                 </div>
             </div>
         </div>
