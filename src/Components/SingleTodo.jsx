@@ -7,13 +7,13 @@ export default function SingleTodo(props) {
     const completeTodo = () => {
         setTodosArray(todosArray.map(singleTodo => {
             if (singleTodo.name === props.todoContent) {
-                
+
                 return {
                     ...singleTodo,
                     completed: !props.completion
                 }
             }
-            return singleTodo // Spent almost an hour with a bug due forgetting this return!!!
+            return singleTodo // Spent almost an hour with a bug due forgetting this return !!
         }))
     }
 
