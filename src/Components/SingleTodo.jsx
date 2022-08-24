@@ -13,7 +13,7 @@ export default function SingleTodo(props) {
                     completed: !props.completion
                 }
             }
-            return singleTodo // Spent almost an hour with a bug due forgetting this return !!
+            return singleTodo // Spent almost an hour with a bug due forgetting this return !!!
         }))
     }
 
